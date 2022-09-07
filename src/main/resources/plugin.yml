@@ -1,0 +1,11 @@
+name: Chaos
+version: '${project.version}'
+main: me.horek.chaos.Main
+api-version: 1.16
+authors: [ horek ]
+description: new update plugin!!!!!!!! chaos 2.0
+
+commands:
+  chaos:
+    description: ''
+    usage: /<command>
