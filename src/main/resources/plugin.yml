@@ -9,3 +9,5 @@ commands:
   chaos:
     description: ''
     usage: /<command>
+    aliases:
+      - startChaos
