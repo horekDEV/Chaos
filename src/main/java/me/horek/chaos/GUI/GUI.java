@@ -27,7 +27,7 @@ public class GUI {
     public class GuiEvent {
         @EventHandler
         public void onClick(InventoryClickEvent event) {
-            if (event.getInventory() == GUI.instance.inventory) {
+            if (event.getInventory().equals(GUI.instance.inventory)) {
                 event.setCancelled(true);
             }
 
