@@ -2,7 +2,6 @@ package me.horek.chaos;
 
 import me.horek.chaos.GUI.GUI;
 import me.horek.chaos.commands.ChaosCMD;
-import me.horek.chaos.event.ChaosEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin {
