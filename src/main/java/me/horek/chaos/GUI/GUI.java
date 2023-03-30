@@ -8,6 +8,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.HandlerList;
+import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 
@@ -24,7 +25,7 @@ public class GUI {
         inventory.setItem(14, Util.createItemStack(Material.RED_BED, "stop", "stop a chaos game"));
     }
 
-    public class GuiEvent {
+    public static class GuiEvent implements Listener {
         @EventHandler
         public void onClick(InventoryClickEvent event) {
             if (event.getInventory().equals(GUI.instance.inventory)) {
