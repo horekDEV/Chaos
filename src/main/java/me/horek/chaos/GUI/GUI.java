@@ -26,6 +26,8 @@ public class GUI {
     }
 
     public static class GuiEvent implements Listener {
+        ChaosEvent chaosEvent = new ChaosEvent();
+
         @EventHandler
         public void onClick(InventoryClickEvent event) {
             if (event.getInventory().equals(GUI.instance.inventory)) {
@@ -34,11 +36,11 @@ public class GUI {
 
             if (event.getCurrentItem().equals(12)) {
                 event.getWhoClicked().sendMessage(ChatColor.translateAlternateColorCodes('&', "&aPlugin start"));
-                Bukkit.getServer().getPluginManager().registerEvents(new ChaosEvent(), Main.instance);
+                Bukkit.getServer().getPluginManager().registerEvents(chaosEvent, Main.instance);
                 
             } else if (event.getCurrentItem().equals(14)) {
                 event.getWhoClicked().sendMessage(ChatColor.translateAlternateColorCodes('&', "&cPlugin start"));
-                HandlerList.unregisterAll(new ChaosEvent());
+                HandlerList.unregisterAll(chaosEvent);
             }
         }
     }
