@@ -1,5 +1,6 @@
 package me.horek.chaos.commands;
 
+import me.horek.chaos.GUI.GUI;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
@@ -15,6 +16,7 @@ public class ChaosCMD implements TabExecutor {
         Player player = (Player) sender;
 
         if (player.isOp()) {
+            player.openInventory(GUI.instance.inventory);
             return true;
         }
 

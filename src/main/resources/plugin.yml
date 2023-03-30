@@ -10,4 +10,4 @@ commands:
     description: ''
     usage: /<command>
     aliases:
-      - startChaos
+      - chaos
