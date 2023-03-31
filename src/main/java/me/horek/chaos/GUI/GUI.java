@@ -1,15 +1,8 @@
 package me.horek.chaos.GUI;
 
-import me.horek.chaos.Main;
 import me.horek.chaos.Util.Util;
-import me.horek.chaos.event.ChaosEvent;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.HandlerList;
-import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 
 public class GUI {
@@ -24,25 +17,4 @@ public class GUI {
         inventory.setItem(12, Util.createItemStack(Material.GREEN_BED, "start", "start a chaos game"));
         inventory.setItem(14, Util.createItemStack(Material.RED_BED, "stop", "stop a chaos game"));
     }
-
-    public static class GuiEvent implements Listener {
-        ChaosEvent chaosEvent = new ChaosEvent();
-
-        @EventHandler
-        public void onClick(InventoryClickEvent event) {
-            if (event.getInventory().equals(GUI.instance.inventory)) {
-                event.setCancelled(true);
-            }
-
-            if (event.getCurrentItem().equals(12)) {
-                event.getWhoClicked().sendMessage(ChatColor.translateAlternateColorCodes('&', "&aPlugin start"));
-                Bukkit.getServer().getPluginManager().registerEvents(chaosEvent, Main.instance);
-                
-            } else if (event.getCurrentItem().equals(14)) {
-                event.getWhoClicked().sendMessage(ChatColor.translateAlternateColorCodes('&', "&cPlugin start"));
-                HandlerList.unregisterAll(chaosEvent);
-            }
-        }
-    }
-
 }

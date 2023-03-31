@@ -1,6 +1,7 @@
 package me.horek.chaos;
 
 import me.horek.chaos.GUI.GUI;
+import me.horek.chaos.GUI.GuiEvent;
 import me.horek.chaos.commands.ChaosCMD;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,7 +14,7 @@ public final class Main extends JavaPlugin {
         getLogger().info("plugin " + getLogger().getName() + " was start");
 
         getCommand("chaos").setExecutor(new ChaosCMD());
-        getServer().getPluginManager().registerEvents(new GUI.GuiEvent(), this);
+        getServer().getPluginManager().registerEvents(new GuiEvent(), this);
     }
 
     @Override
