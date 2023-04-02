@@ -18,11 +18,11 @@ public class GuiEvent implements Listener {
             event.setCancelled(true);
         }
 
-        if (event.getCurrentItem().equals(12)) {
+        if (event.getSlot() == 12) {
             event.getWhoClicked().sendMessage(ChatColor.translateAlternateColorCodes('&', "&aPlugin start"));
             Bukkit.getServer().getPluginManager().registerEvents(chaosEvent, Main.instance);
 
-        } else if (event.getCurrentItem().equals(14)) {
+        } else if (event.getSlot() == 14) {
             event.getWhoClicked().sendMessage(ChatColor.translateAlternateColorCodes('&', "&cPlugin start"));
             HandlerList.unregisterAll(chaosEvent);
         }
